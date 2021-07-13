@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "39f1e6fb-5059-45c4-936e-b05b3326e8ff",
+		"name": "APIUS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getthereprodetails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/repos/javaandselenium/Gitproject",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"repos",
+						"javaandselenium",
+						"Gitproject"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createarepro",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"javaandselenium\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.owner.id).to.eql(72552582);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var random=Math.random().toString(7)\r",
+							"var reposname = \"demo\" + random\r",
+							"pm.environment.set(\"APITest\",reposname);\r",
+							"console.log(reposname)\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"{{reposname}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/repos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "private",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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 ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"private\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/repos/javaandselenium/APItestingUS",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"repos",
+						"javaandselenium",
+						"APItestingUS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleterepro",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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 ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/repos/javaandselenium/APItestingUS",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"repos",
+						"javaandselenium",
+						"APItestingUS"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
