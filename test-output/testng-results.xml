@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-07-14T20:58:41 IST" name="Default suite" finished-at="2021-07-14T20:58:49 IST" duration-ms="8103">
+  <suite started-at="2021-07-15T20:46:05 IST" name="Default suite" finished-at="2021-07-15T20:46:12 IST" duration-ms="7058">
     <groups>
     </groups>
-    <test started-at="2021-07-14T20:58:41 IST" name="Default test" finished-at="2021-07-14T20:58:49 IST" duration-ms="8103">
-      <class name="parameterization.GetOPeration">
-        <test-method signature="tc3()[pri:0, instance:parameterization.GetOPeration@21b2e768]" started-at="2021-07-14T20:58:41 IST" name="tc3" finished-at="2021-07-14T20:58:49 IST" duration-ms="7947" status="PASS">
+    <test started-at="2021-07-15T20:46:05 IST" name="Default test" finished-at="2021-07-15T20:46:12 IST" duration-ms="7058">
+      <class name="validations.Test4">
+        <test-method signature="tc1()[pri:0, instance:validations.Test4@6a03bcb1]" started-at="2021-07-15T20:46:05 IST" name="tc1" finished-at="2021-07-15T20:46:12 IST" duration-ms="6916" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tc3 -->
-      </class> <!-- parameterization.GetOPeration -->
+        </test-method> <!-- tc1 -->
+      </class> <!-- validations.Test4 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
